@@ -48,7 +48,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-28 pb-16">
-        <div className="grid lg:grid-cols-[1fr_480px] gap-8 items-center">
+        <div className="grid lg:grid-cols-[1fr_540px] gap-8 items-center">
           {/* Left */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-surface-foreground leading-tight">
