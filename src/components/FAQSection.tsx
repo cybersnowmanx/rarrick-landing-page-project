@@ -1,5 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "./ScrollReveal";
+import house8 from "@/assets/house-8.jpg";
 
 const faqs = [
   { q: "How does selling my house for cash work?", a: "It's simple — you fill out our form with your property address, we evaluate your home, and present you with a fair, no-obligation cash offer within 24 hours. If you accept, we handle all the paperwork and close on your timeline." },
@@ -13,7 +14,7 @@ const faqs = [
 const FAQSection = () => {
   return (
     <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
@@ -25,24 +26,32 @@ const FAQSection = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30 transition-colors"
-              >
-                <AccordionTrigger className="text-left font-semibold text-card-foreground hover:no-underline py-5">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </ScrollReveal>
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-start max-w-5xl mx-auto">
+          <ScrollReveal delay={0.1}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`faq-${i}`}
+                  className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30 transition-colors"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-card-foreground hover:no-underline py-5">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </ScrollReveal>
+
+          <ScrollReveal direction="right" delay={0.2}>
+            <div className="hidden lg:block w-64 rounded-2xl overflow-hidden shadow-xl sticky top-8">
+              <img src={house8} alt="Colonial style home" className="w-full h-[380px] object-cover" />
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );
