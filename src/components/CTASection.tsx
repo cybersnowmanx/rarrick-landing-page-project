@@ -14,9 +14,9 @@ const CTASection = () => {
         <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 text-lg">
           Get your no-obligation cash offer today. No fees, no repairs, close on your timeline.
         </p>
-        <a
+         <a
           href="#offer"
-          className="inline-flex bg-secondary text-secondary-foreground font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-all text-lg"
+          className="inline-flex bg-primary-foreground text-gold font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-all text-lg shadow-lg"
         >
           Get My Cash Offer Now
         </a>

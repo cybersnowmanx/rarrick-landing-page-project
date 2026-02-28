@@ -39,22 +39,22 @@ const WhoWeHelp = () => {
           {situations.map((s, i) => (
             <div
               key={i}
-              className={`rounded-xl border border-secondary/20 p-6 hover:border-secondary/40 transition-all duration-500 group bg-secondary/10 backdrop-blur-sm ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all duration-500 group bg-primary-foreground/15 backdrop-blur-sm ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: visible ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="w-11 h-11 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <s.icon className="w-5 h-5 text-secondary-foreground" />
+              <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <s.icon className="w-5 h-5 text-gold" />
               </div>
               <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-secondary/80 leading-relaxed">{s.desc}</p>
+              <p className="text-sm text-primary-foreground/75 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
 
         <div className={`text-center mt-12 transition-all duration-700 delay-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <a
+           <a
             href="#offer"
-            className="inline-flex bg-secondary text-secondary-foreground font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all"
+            className="inline-flex bg-primary-foreground text-gold font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-lg"
           >
             Get My Cash Offer
           </a>
