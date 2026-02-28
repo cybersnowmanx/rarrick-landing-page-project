@@ -11,23 +11,23 @@ const benefits = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-dark-surface">
+    <section className="py-20 bg-gold">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-surface-foreground mb-3">
-            Why Choose <span className="text-gold">Rarrick Property Solutions</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">
+            Why Choose <span className="text-secondary">Rarrick Property Solutions</span>
           </h2>
-          <p className="text-dark-surface-foreground/60 max-w-xl mx-auto">
+          <p className="text-secondary/70 max-w-xl mx-auto">
             We make selling your house simple, fast, and stress-free.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b, i) => (
-            <div key={i} className="rounded-xl border border-dark-surface-foreground/10 p-6 hover:border-primary/30 transition-all group">
-              <b.icon className="w-8 h-8 text-gold mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-lg font-serif font-bold text-dark-surface-foreground mb-2">{b.title}</h3>
-              <p className="text-sm text-dark-surface-foreground/60 leading-relaxed">{b.desc}</p>
+            <div key={i} className="rounded-xl border border-secondary/15 p-6 hover:border-secondary/30 transition-all group bg-secondary/5">
+              <b.icon className="w-8 h-8 text-secondary mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-lg font-serif font-bold text-secondary mb-2">{b.title}</h3>
+              <p className="text-sm text-secondary/70 leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
