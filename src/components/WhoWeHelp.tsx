@@ -24,13 +24,13 @@ const WhoWeHelp = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 bg-dark-surface overflow-hidden">
+    <section ref={ref} className="py-20 bg-gold overflow-hidden">
       <div className="container mx-auto px-4">
         <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-surface-foreground mb-3">
-            Who We <span className="text-gold">Help</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary mb-3">
+            Who We <span className="text-secondary">Help</span>
           </h2>
-          <p className="text-dark-surface-foreground/60 max-w-xl mx-auto">
+          <p className="text-secondary/70 max-w-xl mx-auto">
             No matter your situation, we've helped homeowners just like you find a way out.
           </p>
         </div>
@@ -39,14 +39,14 @@ const WhoWeHelp = () => {
           {situations.map((s, i) => (
             <div
               key={i}
-              className={`rounded-xl border border-dark-surface-foreground/10 p-6 hover:border-primary/30 transition-all duration-500 group ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`rounded-xl border border-secondary/15 p-6 hover:border-secondary/30 transition-all duration-500 group bg-secondary/5 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: visible ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <s.icon className="w-5 h-5 text-primary-foreground" />
+              <div className="w-11 h-11 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <s.icon className="w-5 h-5 text-secondary-foreground" />
               </div>
-              <h3 className="text-lg font-serif font-bold text-dark-surface-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-dark-surface-foreground/60 leading-relaxed">{s.desc}</p>
+              <h3 className="text-lg font-serif font-bold text-secondary mb-2">{s.title}</h3>
+              <p className="text-sm text-secondary/70 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -54,7 +54,7 @@ const WhoWeHelp = () => {
         <div className={`text-center mt-12 transition-all duration-700 delay-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
           <a
             href="#offer"
-            className="inline-flex gradient-gold text-primary-foreground font-semibold px-8 py-3.5 rounded-lg shadow-gold hover:opacity-90 transition-all"
+            className="inline-flex bg-secondary text-secondary-foreground font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all"
           >
             Get My Cash Offer
           </a>
