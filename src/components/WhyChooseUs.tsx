@@ -24,12 +24,12 @@ const WhyChooseUs = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b, i) => (
-            <div key={i} className="rounded-xl border border-secondary/20 p-6 hover:border-secondary/40 transition-all group bg-secondary/10 backdrop-blur-sm">
-              <div className="w-11 h-11 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <b.icon className="w-5 h-5 text-secondary-foreground" />
+            <div key={i} className="rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all group bg-primary-foreground/15 backdrop-blur-sm">
+              <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <b.icon className="w-5 h-5 text-gold" />
               </div>
               <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{b.title}</h3>
-              <p className="text-sm text-secondary/90 leading-relaxed">{b.desc}</p>
+              <p className="text-sm text-primary-foreground/75 leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>
