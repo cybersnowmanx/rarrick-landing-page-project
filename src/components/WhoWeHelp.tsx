@@ -12,14 +12,14 @@ const situations = [
 
 const WhoWeHelp = () => {
   return (
-    <section className="py-20 bg-gold overflow-hidden">
+    <section className="py-20 bg-gold-dark overflow-hidden">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
-              Who We Help
+              Who We <span className="text-gold-light">Help</span>
             </h2>
-            <p className="text-primary-foreground/80 max-w-xl mx-auto">
+            <p className="text-primary-foreground/70 max-w-xl mx-auto">
               No matter your situation, we've helped homeowners just like you find a way out.
             </p>
           </div>
@@ -28,12 +28,12 @@ const WhoWeHelp = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {situations.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.08} direction="up">
-              <div className="rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all duration-500 group bg-primary-foreground/15 backdrop-blur-sm h-full">
-                <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <s.icon className="w-5 h-5 text-gold" />
+              <div className="rounded-xl border border-primary-foreground/15 p-6 hover:border-primary-foreground/30 transition-all duration-500 group bg-primary-foreground/10 backdrop-blur-sm h-full">
+                <div className="w-11 h-11 rounded-lg bg-gold-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <s.icon className="w-5 h-5 text-foreground" />
                 </div>
                 <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-primary-foreground/75 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-primary-foreground/70 leading-relaxed">{s.desc}</p>
               </div>
             </ScrollReveal>
           ))}
@@ -43,7 +43,7 @@ const WhoWeHelp = () => {
           <div className="text-center mt-12">
             <a
               href="#offer"
-              className="inline-flex bg-primary-foreground text-gold font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-lg"
+              className="inline-flex gradient-gold text-primary-foreground font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-gold"
             >
               Get My Cash Offer
             </a>

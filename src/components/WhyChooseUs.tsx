@@ -16,10 +16,10 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
-              Why Choose Rarrick Property Solutions
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
+              Why Choose <span className="text-primary-foreground">Rarrick Property Solutions</span>
             </h2>
-            <p className="text-primary-foreground/80 max-w-xl mx-auto">
+            <p className="text-foreground/70 max-w-xl mx-auto">
               We make selling your house simple, fast, and stress-free.
             </p>
           </div>
@@ -28,12 +28,12 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b, i) => (
             <ScrollReveal key={i} delay={i * 0.08} direction="up">
-              <div className="rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all group bg-primary-foreground/15 backdrop-blur-sm h-full">
-                <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <b.icon className="w-5 h-5 text-gold" />
+              <div className="rounded-xl border border-border p-6 hover:shadow-lg transition-all group bg-card h-full">
+                <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <b.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{b.title}</h3>
-                <p className="text-sm text-primary-foreground/75 leading-relaxed">{b.desc}</p>
+                <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
               </div>
             </ScrollReveal>
           ))}
