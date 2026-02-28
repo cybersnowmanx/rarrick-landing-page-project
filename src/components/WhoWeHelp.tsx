@@ -1,5 +1,6 @@
 import { Home, Landmark, Users, AlertTriangle, HeartHandshake, KeyRound } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import house7 from "@/assets/house-7.jpg";
 
 const situations = [
   { icon: Landmark, title: "Facing Foreclosure", desc: "Avoid the stress and credit damage. We can close fast and help you move forward." },
@@ -25,18 +26,26 @@ const WhoWeHelp = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {situations.map((s, i) => (
-            <ScrollReveal key={i} delay={i * 0.08} direction="up">
-              <div className="rounded-xl border border-primary-foreground/15 p-6 hover:border-primary-foreground/30 transition-all duration-500 group bg-primary-foreground/10 backdrop-blur-sm h-full">
-                <div className="w-11 h-11 rounded-lg bg-gold-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <s.icon className="w-5 h-5 text-foreground" />
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {situations.map((s, i) => (
+              <ScrollReveal key={i} delay={i * 0.08} direction="up">
+                <div className="rounded-xl border border-primary-foreground/15 p-6 hover:border-primary-foreground/30 transition-all duration-500 group bg-primary-foreground/10 backdrop-blur-sm h-full">
+                  <div className="w-11 h-11 rounded-lg bg-gold-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <s.icon className="w-5 h-5 text-foreground" />
+                  </div>
+                  <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
+                  <p className="text-sm text-primary-foreground/70 leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
-                <p className="text-sm text-primary-foreground/70 leading-relaxed">{s.desc}</p>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal direction="right" delay={0.3}>
+            <div className="hidden lg:block w-72 rounded-2xl overflow-hidden shadow-xl border border-primary-foreground/20">
+              <img src={house7} alt="Cozy family home" className="w-full h-[420px] object-cover" />
+            </div>
+          </ScrollReveal>
         </div>
 
         <ScrollReveal delay={0.5}>

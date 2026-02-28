@@ -1,5 +1,6 @@
 import { Wrench, Clock, HandCoins, ShieldCheck, Users, FileText } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import house6 from "@/assets/house-6.jpg";
 
 const benefits = [
   { icon: HandCoins, title: "Fair Cash Offers", desc: "We provide competitive cash offers based on current market value." },
@@ -25,18 +26,26 @@ const WhyChooseUs = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((b, i) => (
-            <ScrollReveal key={i} delay={i * 0.08} direction="up">
-              <div className="rounded-xl border border-border p-6 hover:shadow-lg transition-all group bg-card h-full">
-                <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <b.icon className="w-5 h-5 text-primary-foreground" />
+        <div className="grid lg:grid-cols-[auto_1fr] gap-12 items-center">
+          <ScrollReveal direction="left" delay={0.1}>
+            <div className="hidden lg:block w-72 rounded-2xl overflow-hidden shadow-xl">
+              <img src={house6} alt="Charming home" className="w-full h-[420px] object-cover" />
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((b, i) => (
+              <ScrollReveal key={i} delay={i * 0.08} direction="up">
+                <div className="rounded-xl border border-border p-6 hover:shadow-lg transition-all group bg-card h-full">
+                  <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <b.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
                 </div>
-                <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{b.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
