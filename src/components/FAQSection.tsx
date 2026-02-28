@@ -26,7 +26,13 @@ const FAQSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-start max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-[auto_1fr] gap-12 items-start max-w-5xl mx-auto">
+          <ScrollReveal direction="left" delay={0.2}>
+            <div className="hidden lg:block w-64 rounded-2xl overflow-hidden shadow-xl sticky top-8">
+              <img src={house8} alt="Colonial style home" className="w-full h-[380px] object-cover" />
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal delay={0.1}>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
@@ -44,12 +50,6 @@ const FAQSection = () => {
                 </AccordionItem>
               ))}
             </Accordion>
-          </ScrollReveal>
-
-          <ScrollReveal direction="right" delay={0.2}>
-            <div className="hidden lg:block w-64 rounded-2xl overflow-hidden shadow-xl sticky top-8">
-              <img src={house8} alt="Colonial style home" className="w-full h-[380px] object-cover" />
-            </div>
           </ScrollReveal>
         </div>
       </div>
