@@ -1,12 +1,9 @@
-import { Home, DollarSign, FileCheck, Calendar } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import house5 from "@/assets/house-5.jpg";
 
 const steps = [
-  { icon: Home, title: "Tell Us About Your Property", description: "Fill out our simple form with your property address. It takes just 30 seconds." },
-  { icon: DollarSign, title: "Get Your Cash Offer", description: "We'll evaluate your property and present you with a fair, no-obligation cash offer within 24 hours." },
-  { icon: FileCheck, title: "We Handle Everything", description: "No repairs, no cleaning, no agent fees. We take care of all the paperwork and closing costs." },
-  { icon: Calendar, title: "Close On Your Timeline", description: "Choose your closing date — as fast as 7 days or on whatever schedule works best for you." },
+  { num: "01", title: "Tell Us About Your Property", description: "Fill out our quick form with your property address and contact info. It takes just 30 seconds." },
+  { num: "02", title: "Get Your Cash Offer", description: "We evaluate your property and present you with a fair, no-obligation cash offer within 24 hours." },
+  { num: "03", title: "Close On Your Timeline", description: "Choose your closing date — as fast as 7 days. We handle all paperwork and closing costs." },
 ];
 
 const HowItWorks = () => {
@@ -19,34 +16,23 @@ const HowItWorks = () => {
               How It <span className="text-gold">Works</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Selling your house has never been this simple. Four easy steps to your cash offer.
+              Selling your house has never been this simple. Three easy steps to your cash offer.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          <div className="grid md:grid-cols-2 gap-8">
-            {steps.map((step, i) => (
-              <ScrollReveal key={i} delay={i * 0.1} direction="up">
-                <div className="relative group h-full">
-                  <div className="bg-card rounded-xl p-6 h-full border border-border hover:border-primary/30 transition-all hover:shadow-lg">
-                    <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center mb-4">
-                      <step.icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <span className="text-xs font-semibold text-primary mb-2 block">Step {i + 1}</span>
-                    <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                  </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {steps.map((step, i) => (
+            <ScrollReveal key={i} delay={i * 0.15} direction="up">
+              <div className="bg-card rounded-2xl p-8 h-full border border-border hover:border-primary/30 transition-all hover:shadow-lg text-center">
+                <div className="w-14 h-14 rounded-full gradient-gold flex items-center justify-center mx-auto mb-5">
+                  <span className="text-lg font-bold text-primary-foreground">{step.num}</span>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal direction="right" delay={0.2}>
-            <div className="hidden lg:block w-72 rounded-2xl overflow-hidden shadow-xl">
-              <img src={house5} alt="Beautiful home" className="w-full h-[420px] object-cover" />
-            </div>
-          </ScrollReveal>
+                <h3 className="text-lg font-serif font-bold text-card-foreground mb-3">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

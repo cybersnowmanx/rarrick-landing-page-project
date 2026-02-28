@@ -1,5 +1,6 @@
 import { Home, Landmark, Users, AlertTriangle, HeartHandshake, KeyRound } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import house6 from "@/assets/house-6.jpg";
 import house7 from "@/assets/house-7.jpg";
 
 const situations = [
@@ -13,51 +14,47 @@ const situations = [
 
 const WhoWeHelp = () => {
   return (
-    <section className="py-20 bg-gold-dark overflow-hidden">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
-              Who We <span className="text-gold-light">Help</span>
-            </h2>
-            <p className="text-primary-foreground/70 max-w-xl mx-auto">
-              No matter your situation, we've helped homeowners just like you find a way out.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {situations.map((s, i) => (
-              <ScrollReveal key={i} delay={i * 0.08} direction="up">
-                <div className="rounded-xl border border-primary-foreground/15 p-6 hover:border-primary-foreground/30 transition-all duration-500 group bg-primary-foreground/10 backdrop-blur-sm h-full">
-                  <div className="w-11 h-11 rounded-lg bg-gold-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <s.icon className="w-5 h-5 text-foreground" />
-                  </div>
-                  <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
-                  <p className="text-sm text-primary-foreground/70 leading-relaxed">{s.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal direction="right" delay={0.3}>
-            <div className="hidden lg:block w-72 rounded-2xl overflow-hidden shadow-xl border border-primary-foreground/20">
-              <img src={house7} alt="Cozy family home" className="w-full h-[420px] object-cover" />
+        {/* Top: Image left + text right */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <ScrollReveal direction="left">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img src={house6} alt="Home we can help with" className="w-full h-[400px] object-cover" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={0.1}>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+                We Buy Houses in <span className="text-gold">Any Condition</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                No matter your situation, we've helped homeowners just like you find a way out. No repairs needed, no cleaning, no agent fees.
+              </p>
+              <a
+                href="#offer"
+                className="inline-flex gradient-gold text-primary-foreground font-semibold px-7 py-3.5 rounded-lg shadow-gold hover:opacity-90 transition-all"
+              >
+                Get My Cash Offer
+              </a>
             </div>
           </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={0.5}>
-          <div className="text-center mt-12">
-            <a
-              href="#offer"
-              className="inline-flex gradient-gold text-primary-foreground font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-gold"
-            >
-              Get My Cash Offer
-            </a>
-          </div>
-        </ScrollReveal>
+        {/* Situation cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {situations.map((s, i) => (
+            <ScrollReveal key={i} delay={i * 0.08} direction="up">
+              <div className="bg-card rounded-2xl border border-border p-6 hover:shadow-lg transition-all group h-full">
+                <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <s.icon className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

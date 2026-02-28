@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, Star } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import heroBg from "@/assets/hero-bg.jpg";
 import TwoStepForm from "./TwoStepForm";
@@ -48,25 +48,31 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-28 pb-16">
-        <div className="grid lg:grid-cols-[1fr_540px] gap-8 items-center">
+        <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-center">
           {/* Left */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark-surface-foreground leading-tight">
               Get a <span className="text-gold">Cash Offer</span> for Your House — <span className="text-gold">As Is</span>
             </h1>
             <p className="text-lg text-dark-surface-foreground/70 max-w-lg leading-relaxed">
-              We buy houses for cash. No fees, no repairs, no hassle. Get a fair offer and close on your timeline.
+              We buy houses for cash. No fees, no repairs, no hassle.<br />
+              Get a fair offer and close on your timeline.
             </p>
-            <div className="flex flex-wrap gap-6 text-dark-surface-foreground/60 text-sm">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold" /> No Repairs Needed
+
+            {/* Review stars badge */}
+            <div className="inline-flex flex-col gap-1 bg-dark-surface-foreground/10 backdrop-blur-sm rounded-xl px-5 py-3 max-w-[320px]">
+              <span className="text-sm font-semibold text-dark-surface-foreground">
+                Our clients love working with us.
               </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold" /> Close in 7 Days
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold" /> Zero Fees
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-bold text-dark-surface-foreground">4.9</span>
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  ))}
+                </div>
+                <span className="text-xs text-dark-surface-foreground/60">150+ reviews</span>
+              </div>
             </div>
           </div>
 

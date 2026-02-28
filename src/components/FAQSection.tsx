@@ -15,24 +15,20 @@ const FAQSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <ScrollReveal>
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
-              Frequently Asked <span className="text-gold">Questions</span>
-            </h2>
-            <p className="text-muted-foreground">
-              Everything you need to know about selling your house for cash.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid lg:grid-cols-[auto_1fr] gap-12 items-start max-w-5xl mx-auto">
-          <ScrollReveal direction="left" delay={0.2}>
-            <div className="hidden lg:block w-64 rounded-2xl overflow-hidden shadow-xl sticky top-8">
-              <img src={house8} alt="Colonial style home" className="w-full h-[380px] object-cover" />
+        <div className="grid lg:grid-cols-[340px_1fr] gap-12 items-start max-w-5xl mx-auto">
+          {/* Left - Title + Image */}
+          <ScrollReveal direction="left">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+                Frequently Asked <span className="text-gold">Questions</span>
+              </h2>
+              <div className="hidden lg:block rounded-2xl overflow-hidden shadow-xl">
+                <img src={house8} alt="Colonial style home" className="w-full h-[380px] object-cover" />
+              </div>
             </div>
           </ScrollReveal>
 
+          {/* Right - Accordion */}
           <ScrollReveal delay={0.1}>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, i) => (
