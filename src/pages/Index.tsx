@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import AsSeenOn from "@/components/AsSeenOn";
 import HowItWorks from "@/components/HowItWorks";
+import MidCTA from "@/components/MidCTA";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import WhoWeHelp from "@/components/WhoWeHelp";
@@ -14,11 +15,12 @@ const Index = () => {
       <HeroSection />
       <AsSeenOn />
       <HowItWorks />
+      <MidCTA />
       <WhyChooseUs />
       <WhoWeHelp />
       <Testimonials />
-      <FAQSection />
       <CTASection />
+      <FAQSection />
       <Footer />
     </div>
   );

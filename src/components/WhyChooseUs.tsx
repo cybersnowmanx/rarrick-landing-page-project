@@ -1,52 +1,54 @@
-import { Wrench, Clock, HandCoins, ShieldCheck, Users, FileText } from "lucide-react";
+import { Award, Zap, Settings, HandCoins } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import house6 from "@/assets/house-6.jpg";
 
 const benefits = [
-  { icon: HandCoins, title: "Fair Cash Offers", desc: "We provide competitive cash offers based on current market value." },
-  { icon: Clock, title: "Fast Closing", desc: "Close in as little as 7 days. No waiting for bank approvals." },
-  { icon: Wrench, title: "No Repairs Needed", desc: "Sell as-is. We buy houses in any condition — no cleaning required." },
-  { icon: ShieldCheck, title: "No Fees or Commissions", desc: "Zero hidden costs. No agent fees, no closing costs." },
-  { icon: Users, title: "Local & Trusted", desc: "We're a local team that treats every homeowner with respect." },
-  { icon: FileText, title: "We Handle Paperwork", desc: "Our team manages all the closing documents and logistics." },
+  { icon: Award, title: "Expertise & Trust", desc: "With years of experience helping homeowners in tough situations, we know how to create solutions when others can't." },
+  { icon: Zap, title: "Speed & Certainty", desc: "We can make an offer within 24 hours and close in as little as 7 days. No waiting, no delays, no red tape." },
+  { icon: Settings, title: "Tailored Solutions", desc: "Every situation is different. We tailor our approach to fit your goals, whether that's cash, flexible terms, or guidance." },
+  { icon: HandCoins, title: "No-Obligation Offer", desc: "You're never pressured to accept. We present your options and if it makes sense, great. If not, we'll still help." },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-gold">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
-              Why Choose <span className="text-primary-foreground">Rarrick Property Solutions</span>
+              What Makes Rarrick <span className="text-gold">Different</span>
             </h2>
-            <p className="text-foreground/70 max-w-xl mx-auto">
-              We make selling your house simple, fast, and stress-free.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-[auto_1fr] gap-12 items-center">
-          <ScrollReveal direction="left" delay={0.1}>
-            <div className="hidden lg:block w-72 rounded-2xl overflow-hidden shadow-xl">
-              <img src={house6} alt="Charming home" className="w-full h-[420px] object-cover" />
-            </div>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b, i) => (
-              <ScrollReveal key={i} delay={i * 0.08} direction="up">
-                <div className="rounded-xl border border-border p-6 hover:shadow-lg transition-all group bg-card h-full">
-                  <div className="w-11 h-11 rounded-lg gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <b.icon className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-lg font-serif font-bold text-card-foreground mb-2">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((b, i) => (
+            <ScrollReveal key={i} delay={i * 0.1} direction="up">
+              <div className="bg-card rounded-2xl p-7 h-full border border-border hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <b.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+                <h3 className="text-lg font-serif font-bold text-card-foreground mb-3">{b.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
+
+        {/* Bottom banner */}
+        <ScrollReveal delay={0.3}>
+          <div className="mt-10 bg-card rounded-2xl border border-border p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-serif font-bold text-card-foreground">We don't make generic offers.</h3>
+              <p className="text-sm text-muted-foreground mt-1">We actually review your situation and show you what your best move is — even if it means not selling to us.</p>
+            </div>
+            <a
+              href="#offer"
+              className="inline-flex gradient-gold text-primary-foreground font-semibold px-7 py-3.5 rounded-lg shadow-gold hover:opacity-90 transition-all whitespace-nowrap"
+            >
+              Get My Cash Offer
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
