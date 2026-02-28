@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { Home, Landmark, Users, AlertTriangle, HeartHandshake, KeyRound } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 const situations = [
   { icon: Landmark, title: "Facing Foreclosure", desc: "Avoid the stress and credit damage. We can close fast and help you move forward." },
@@ -11,54 +11,44 @@ const situations = [
 ];
 
 const WhoWeHelp = () => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} className="py-20 bg-gold overflow-hidden">
+    <section className="py-20 bg-gold overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
-            Who We Help
-          </h2>
-          <p className="text-primary-foreground/80 max-w-xl mx-auto">
-            No matter your situation, we've helped homeowners just like you find a way out.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground mb-3">
+              Who We Help
+            </h2>
+            <p className="text-primary-foreground/80 max-w-xl mx-auto">
+              No matter your situation, we've helped homeowners just like you find a way out.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {situations.map((s, i) => (
-            <div
-              key={i}
-              className={`rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all duration-500 group bg-primary-foreground/15 backdrop-blur-sm ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{ transitionDelay: visible ? `${i * 100}ms` : "0ms" }}
-            >
-              <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <s.icon className="w-5 h-5 text-gold" />
+            <ScrollReveal key={i} delay={i * 0.08} direction="up">
+              <div className="rounded-xl border border-primary-foreground/20 p-6 hover:border-primary-foreground/40 transition-all duration-500 group bg-primary-foreground/15 backdrop-blur-sm h-full">
+                <div className="w-11 h-11 rounded-lg bg-primary-foreground flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <s.icon className="w-5 h-5 text-gold" />
+                </div>
+                <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
+                <p className="text-sm text-primary-foreground/75 leading-relaxed">{s.desc}</p>
               </div>
-              <h3 className="text-lg font-serif font-bold text-primary-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-primary-foreground/75 leading-relaxed">{s.desc}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className={`text-center mt-12 transition-all duration-700 delay-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-           <a
-            href="#offer"
-            className="inline-flex bg-primary-foreground text-gold font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-lg"
-          >
-            Get My Cash Offer
-          </a>
-        </div>
+        <ScrollReveal delay={0.5}>
+          <div className="text-center mt-12">
+            <a
+              href="#offer"
+              className="inline-flex bg-primary-foreground text-gold font-semibold px-8 py-3.5 rounded-lg hover:opacity-90 transition-all shadow-lg"
+            >
+              Get My Cash Offer
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
